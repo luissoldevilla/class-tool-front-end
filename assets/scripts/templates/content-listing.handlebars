@@ -1,0 +1,36 @@
+{{#each contents as |content|}}
+  {{log content}}
+
+  <div class="handlebar">
+  <h1 data-id="{{content.id}}"> <small>Question: {{content.question}}</small></h1>
+
+  </div>
+  {{log content.editable}}
+  {{#if content.editable}}
+  <div class="handlebar">
+
+    <form class="form-update-content" data-id="{{content.id}}">
+
+      <div>
+
+        <label>Update Question</label>
+        <input type="text" name="content[question]" placeholder="Ask anything!" required="true">
+
+      </div>
+
+      <div>
+
+        <button data-id="update-content" type="submit" class="btn btn-primary">Update your Question</button>
+
+        <button class="btn btn-default remove-button" data-id="{{content.id}}">Remove Question!</button>
+
+      </div>
+
+    </form>
+  </div>
+  {{else}}
+  {{/if}}
+
+  <hr>
+
+{{/each}}
