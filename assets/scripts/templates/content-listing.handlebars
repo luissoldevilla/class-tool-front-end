@@ -1,11 +1,10 @@
 {{#each contents as |content|}}
-  {{log content}}
 
   <div class="handlebar">
   <h1 data-id="{{content.id}}"> <small>Question: {{content.question}}</small></h1>
 
   </div>
-  {{log content.editable}}
+
   {{#if content.editable}}
   <div class="handlebar">
 

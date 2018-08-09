@@ -1,75 +1,80 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+[![Ask Class Logo](https://i.imgur.com/9a90nYW.png)
 
-# browser-template
+# AskClass! Client Side
 
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
+  Client-side repo for full stack web application. The application purpose is
+  to allow users(students) to ask questions to the teachers.
 
-## Installation
+## The Idea
 
-1. [Download](../../archive/master.zip) this template.
-1. Move to the `wdi/projects` directory, then unzip the template directory with
-    `unzip /Users/<user-name>/Downloads/browser-template-master.zip`.
-1. Rename the template directory from `browser-template-master` to
-    `<project-name>-client`.
-1. Empty [`README.md`](README.md) and fill with your own content.
-1. Replace all instances of `ga-wdi-boston.browser-template` with the name of
-    your project.
-1. Move into the new project and `git init`.
-1. Add all of the files in your project with the command `git add --all`.
-      - **Note: This is the only time you should run this command!**
-1. Commit all of your files with the command `git commit`.
-      - Your commit title should read `Initial commit`.
-1. Install dependencies with `npm install`.
-1. Create a new repository on [github.com](https://github.com),
-    _not GitHub Enterprise_.
-1. Name the new repository with the same name used on Step 3.
+The reason I decided to make this application was that I used to be a tutor
+after school back in high school, and often I had students not getting the
+concept of what was happening in class, and most of those times, I would asked
+them if they were participating in class, and they didn't, and I would asked
+them "why?" and they're answer was that they had anxiety, or the class wasn't
+interactive enough, so that's the problem im trying to solve and the main
+purpose behind it.
 
-## Structure
 
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
-The "manifest" or entry-point is
-[`assets/scripts/index.js`](assets/scripts/index.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
+## User Stories
 
-Developers should set `apiUrls.production` and `apiUrls.development` in
-[`config/environment.js`](config/environment.js).  With
-`apiUrls` set, developers may rely on `apiUrl` as the base for API
-URLs.
+User Stories:
+- As a user I want to create questions
+- As a user I want to view my questions
+- As a user I want to delete my quesitons
+- As a user I want to update my question
+- As a user(teacher) I want to delete students quesitons
+- As a user I want to choose my role of a student or teacher
 
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss). Bootstrap version 3 is
-included in this template.
+## Wireframes:
+![Image of Wirerframes](https://i.imgur.com/50C6vrD.png)
 
-Developers should use [getFormFields](get-form-fields.md) to retrieve form data
-to send to an API.
+## Planning
 
-To deploy a browser-template based SPA, run `grunt deploy`.
+The way I approached my project was to focus on the backend first , once that was
+done,  I started with the Client side.  I built the front end first based on MVP.
+These meant that I focus on Auth and the main MVP events (CRUD), such as
+`create question form`, `show`, `deleted` and `update` function based on handlebars.
+After that, I started to focus on the appearance, I utilize Bootstrap for this,
+I customized a top/ sign-in bar as well as modals.
 
-## Tasks
+## Technology Used:
 
-Developers should run these often!
+The main front-end framework is built on Javascript, HTML5, and CSS. Utilizing
+Bootstrap also takes part in building the client side, this can include the
+Sign-In navigation bar, as well as the effects on the buttons when hovering over.
+Bootstrap also allow me to use modals in different sections of the client, such
+as the Sign-up and Change Password. Another big part of my client side is
+utilizing Handlebars, these, are used for displaying the user quesitons once
+created, they are also attached to my API.
 
-- `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
-- `grunt make-standard`: reformats all your code in the JavaScript Standard Style
-- `grunt <server|serve|s>`: generates bundles, watches, and livereloads
-- `grunt test`: runs any automated tests, depends on `grunt build`
-- `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
+
+## Future iterations
+
+### V2
+- User has property named “teacher” which is true or false.
+- On sign up form, select Teacher or Student.
+- If Teacher then brought to Index to view questions
+- Allow Teach to delete once they have answered.
+
+### V3
+- Teacher can respond with an answer in the application and mark it as done.
+
+## API
+
+[For Backend Repo click here](https://github.com/luissoldevilla/class-tool-rails-api)
+
+## Deployed Links:
+
+- [Client](https://luissoldevilla.github.io/class-tool-front-end/)
+- [Backend](https://quiet-ravine-35247.herokuapp.com/)
 
 ## Additional Resources
 
-- [Modern Javascript Explained for Dinosaurs](https://medium.com/@peterxjang/modern-javascript-explained-for-dinosaurs-f695e9747b70)
-- [Making Sense of Front End Build Tools](https://medium.freecodecamp.org/making-sense-of-front-end-build-tools-3a1b3a87043b)
+- [The Pomodoro Technique](https://lifehacker.com/productivity-101-a-primer-to-the-pomodoro-technique-1598992730)
 
 ## [License](LICENSE)
 
 1. All content is licensed under a CC­BY­NC­SA 4.0 license.
 1. All software code is licensed under GNU GPLv3. For commercial use or
     alternative licensing, please contact legal@ga.co.
-# class-tool-front-end
