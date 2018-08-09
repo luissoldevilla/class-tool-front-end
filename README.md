@@ -1,4 +1,4 @@
-[![Ask Class Logo](https://i.imgur.com/9a90nYW.png)
+![Ask Class Logo](https://i.imgur.com/9a90nYW.png)
 
 # AskClass! Client Side
 
