@@ -7,11 +7,9 @@ const showOpContentsTemplate = require('./templates/op-content-listing.handlebar
 const signUpSuccess = function (data) {
   $('#user-message-signUp').html('You are Sign Up!').fadeIn().delay(3000).fadeOut()
   document.getElementById('form-signUp').reset()
-  // console.log(data)
 }
 
 const signUpFail = function (data) {
-  // console.log(data)
   document.getElementById('form-signUp').reset()
   $('#user-message-signUp').html('something went wrong, try again!').fadeIn().delay(3000).fadeOut()
 }
@@ -20,10 +18,8 @@ const signUpFail = function (data) {
 
 const signInSuccess = function (response) {
   store.user = response.user
-  // console.log(response.user)
   document.getElementById('form-signIn').reset()
   $('#user-message-signIn').html('You are sign In!')
-  // $('#myModal').modal('hide')
   $('#change-password').show()
   $('#sign-out').show()
   $('.create-content-form').show()
@@ -36,7 +32,7 @@ const signInSuccess = function (response) {
 }
 
 const signInFail = function (error) {
-  console.log(error)
+  console.error(error)
   document.getElementById('form-signIn').reset()
   $('#user-message-signIn').html('something went wrong, try again!')
 }
@@ -44,13 +40,11 @@ const signInFail = function (error) {
 // CHANGE PASSWORD
 
 const changePasswordSuccess = function (data) {
-  // console.log(data)
   document.getElementById('change-password').reset()
   $('#user-message-passwordChange').html('You have changed your password')
 }
 
 const changePasswordFail = function (data) {
-  // console.log(data)
   document.getElementById('change-password').reset()
   $('#user-message-passwordChange').html('Something went wrong, password not changed')
 }
@@ -91,27 +85,23 @@ const createContentFail = function (data) {
 // SHOW LISTING IF CONTENT
 
 const showContentsSuccess = (data) => {
-  console.log('data is', data)
   if (data.contents.length !== 0) {
     const showContentsHtml = showContentsTemplate({ contents: data.contents })
     $('#question-content').html(showContentsHtml).fadeIn()
   } else {
     $('#question-content').html('You dont have any questions yet').fadeIn().delay(1500).fadeOut()
   }
-  console.log(data.contents.length)
 }
 
 // SHOW OPEN READ LISTING OF CONTENT
 
 const showContentsOpSuccess = (data) => {
-  console.log('data is', data)
   if (data.contents.length !== 0) {
     const showOpContentsHtml = showOpContentsTemplate({ contents: data.contents })
     $('.view-all-content-hbs').html(showOpContentsHtml).fadeIn()
   } else {
     $('.view-all-content-hbs').html('Theres not questions yet').fadeIn().delay(1500).fadeOut()
   }
-  console.log(data.contents.length)
 }
 
 // SHOW ONE CONTENT FORM RESOURCE ERROR

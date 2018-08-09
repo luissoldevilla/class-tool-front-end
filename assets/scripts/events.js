@@ -11,23 +11,19 @@ const onFormSignUp = function (event) {
   api.signUp(data)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFail)
-  console.log(data)
 }
 
 const onFormSignIn = function (event) {
   event.preventDefault()
-  // console.log(event)
   const data = getFormFields(event.target)
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFail)
-  console.log(data)
 }
 
 const onChangePassword = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  // console.log(data)
   api.changePassword(data)
     .then(ui.changePasswordSuccess)
     .catch(ui.changePasswordFail)
@@ -44,19 +40,15 @@ const onSignOut = function (event) {
 
 const onCreateContent = function (event) {
   event.preventDefault()
-  // console.log(event)
   const data = getFormFields(event.target)
   api.createContent(data)
     .then(ui.createContentSuccess)
     .catch(ui.createContentFail)
-  console.log(data)
 }
 
 // THIS IS HANDLEBARS FOR LISTING RESOURCE
 
 const onShowAllContents = function (event) {
-  // console.log('onShowAllContents')
-  // console.log(contents)
   event.preventDefault()
   api.showContents()
     .then(ui.showContentsSuccess)
@@ -66,9 +58,6 @@ const onShowAllContents = function (event) {
 // THIS IS HANDLEBARS FOR OPEN READ LISTING RESOURCE
 
 const onShowAllContentsOp = function () {
-  // console.log('onShowAllContents')
-  // console.log(contents)
-  // preventDefault()
   api.showContentsOp()
     .then(ui.showContentsOpSuccess)
     .catch(ui.showContentsOpFail)
@@ -78,9 +67,7 @@ const onShowAllContentsOp = function () {
 
 const onDeleteShownContents = (event) => {
   event.preventDefault()
-  console.log(onDeleteShownContents)
   const contentsId = $(event.target).closest('button').attr('data-id')
-  console.log(contentsId)
   api.deleteContents(contentsId)
     .then(() => onShowAllContents(event))
     .catch(ui.showContentsFail)
@@ -92,7 +79,6 @@ const onUpdateShownContents = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
   const contentsId = $(event.target).attr('data-id')
-  console.log(contentsId)
   api.updateContents(contentsId, data)
     .then(() => onShowAllContents(event))
     .catch(ui.updateContentsFail)
