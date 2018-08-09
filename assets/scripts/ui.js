@@ -13,7 +13,7 @@ const signUpSuccess = function (data) {
 const signUpFail = function (data) {
   // console.log(data)
   document.getElementById('form-signUp').reset()
-  $('#user-message-signUp').html('something went wrong, try again!')
+  $('#user-message-signUp').html('something went wrong, try again!').fadeIn().delay(3000).fadeOut()
 }
 
 // SIGN IN
