@@ -73,7 +73,7 @@ created, they are also attached to my API.
 
 ## Additional Resources
 
-- [The Pomodoro Technique](https://lifehacker.com/productivity-101-a-primer-to-the-pomodoro-technique-1598992730)
+- [Anxiety in Classroom](https://childmind.org/article/classroom-anxiety-in-children/)
 
 ## [License](LICENSE)
 
