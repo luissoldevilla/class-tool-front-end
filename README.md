@@ -1,4 +1,6 @@
-![Ask Class Logo](https://i.imgur.com/9a90nYW.png)
+![alt text][logo]
+
+[logo]: https://i.imgur.com/8o4sVQE.png?1
 
 # AskClass! Client Side
 
