@@ -31,6 +31,9 @@ User Stories:
 ## Wireframes:
 ![Image of Wirerframes](https://i.imgur.com/50C6vrD.png)
 
+## Screenshot:
+![Screenshot](https://i.imgur.com/qCOIZZK.png)
+
 ## Planning
 
 The way I approached my project was to focus on the backend first , once that was
