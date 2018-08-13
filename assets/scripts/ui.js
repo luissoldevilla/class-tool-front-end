@@ -5,7 +5,11 @@ const showOpContentsTemplate = require('./templates/op-content-listing.handlebar
 
 // SIGN UP
 const signUpSuccess = function (data) {
-  $('#user-message-signUp').html('You are Sign Up!').fadeIn().delay(3000).fadeOut()
+  if (data.user.teacher === false) {
+    $('#user-message-signUp').html('You are Sign Up As a Student!').fadeIn().delay(3000).fadeOut()
+  } else {
+    $('#user-message-signUp').html('You are Sign Up As a Teacher!').fadeIn().delay(3000).fadeOut()
+  }
   document.getElementById('form-signUp').reset()
 }
 
@@ -18,6 +22,12 @@ const signUpFail = function (data) {
 
 const signInSuccess = function (response) {
   store.user = response.user
+  if (response.user.teacher === true) {
+    $('.user-status').html('You are a Teacher')
+  } else {
+    $('.user-status').html('You are a Student')
+  }
+  $('.user-status').show()
   document.getElementById('form-signIn').reset()
   $('#user-message-signIn').html('You are sign In!')
   $('#change-password').show()
@@ -63,6 +73,7 @@ const signOutSuccess = function (data) {
   $('.pass-change').hide()
   $('#question-content').hide()
   $('.form-group').show()
+  $('.user-status').hide()
   // showContentsOpSuccess()
   document.getElementById('form-createContent').reset()
   document.getElementById('change-password').reset()

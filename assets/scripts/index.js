@@ -14,6 +14,7 @@ $(() => {
   $('#pass-change').hide()
   $('.pass-change').hide()
   $('.create-content-form').hide()
+  $('.user-status').hide()
   $(contentsEvents.onShowAllContentsOp)
   $('#sign-out').on('click', contentsEvents.onShowAllContentsOp)
 
